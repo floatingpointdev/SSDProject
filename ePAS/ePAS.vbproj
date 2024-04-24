@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7314C54A-6FCE-48F9-9D48-D002B8DA479C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>SSDProject</RootNamespace>
+    <AssemblyName>e-PAS</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>Rewards.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>e-PAS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>e-PAS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>e-PAS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>e-PAS.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=12.1.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SQLDMO, Version=8.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>DLL\Interop.SQLDMO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>DLL\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=15.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bin\x86\Debug\Reports\ActiveMembers.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActiveMembers.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\ConsolidatedReport.vb">
+      <DependentUpon>ConsolidatedReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\CreditAdjustments.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreditAdjustments.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\MemberCardHistory.vb">
+      <DependentUpon>MemberCardHistory.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\EmployeeMasterFile.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeMasterFile.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\InactiveMembers.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InactiveMembers.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\ManuallyAddedMVR.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManuallyAddedMVR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\OutstandingSD.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingSD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\ReissuedCards.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReissuedCards.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\rptLoyaltyRewardsV2.vb">
+      <DependentUpon>rptLoyaltyRewardsV2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\rptMVRCreditsTransLog.vb">
+      <DependentUpon>rptMVRCreditsTransLog.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\rptConcessionaires1.vb">
+      <DependentUpon>rptConcessionaires1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\rptConcessionaires.vb">
+      <DependentUpon>rptConcessionaires.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\rptLoyaltyRewards.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLoyaltyRewards.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\rptLoyaltyTransLog.vb">
+      <DependentUpon>rptLoyaltyTransLog.rpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\SalaryDeductionPayments.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalaryDeductionPayments.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\TerminalEOD.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TerminalEOD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\IndividualTransactionLogs.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndividualTransactionLogs.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\x86\Debug\Reports\UploadedMVR.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UploadedMVR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Common\Chain3DES.vb" />
+    <Compile Include="Classes\Common\Common_Helper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Common\Database_Helper.vb" />
+    <Compile Include="Classes\Common\EncryptDecrypt_Helper.vb" />
+    <Compile Include="Classes\Common\ModWinsCard.vb" />
+    <Compile Include="Classes\Common\RawPrinterHelper.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLAuditLogs_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLAR_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\OLEDBExcel_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLDatabase_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLMember_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLCard_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLLoyalty_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLCA_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLPreferences_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLPrintLog_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLResetCalendar_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLResetLog_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLRewards_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLReaderSetup_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLServerSetup_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLTransaction_Worker.vb" />
+    <Compile Include="Classes\DatabaseInterFace\SQLUserAccounts_Worker.vb" />
+    <Compile Include="Classes\DeviceInterface\ACR122U_Worker.vb" />
+    <Compile Include="Classes\DeviceInterface\SerialPort_Worker.vb" />
+    <Compile Include="Classes\Entities\AuditLog_Entity.vb" />
+    <Compile Include="Classes\Entities\ARLog_Entity.vb" />
+    <Compile Include="Classes\Entities\AR_Entity.vb" />
+    <Compile Include="Classes\Entities\CALog_Entity.vb" />
+    <Compile Include="Classes\Entities\CA_Entity.vb" />
+    <Compile Include="Classes\Entities\Member_Entity.vb" />
+    <Compile Include="Classes\Entities\Card_Entity.vb" />
+    <Compile Include="Classes\Entities\Loyalty_Entity.vb" />
+    <Compile Include="Classes\Entities\OtherTransactions_Entity.vb" />
+    <Compile Include="Classes\Entities\Preferences_Entity.vb" />
+    <Compile Include="Classes\Entities\PrintLog_Entity.vb" />
+    <Compile Include="Classes\Entities\ResetCalendar_Entity.vb" />
+    <Compile Include="Classes\Entities\ResetLog_Entity.vb" />
+    <Compile Include="Classes\Entities\Rewards_Entity.vb" />
+    <Compile Include="Classes\Entities\Receipt_Entity.vb" />
+    <Compile Include="Classes\Entities\SQLConnection_Entity.vb" />
+    <Compile Include="Classes\Entities\Transaction_Entity.vb" />
+    <Compile Include="Classes\Entities\UserAccounts_Entity.vb" />
+    <Compile Include="Forms\frmConfirmTrans.Designer.vb">
+      <DependentUpon>frmConfirmTrans.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfirmTrans.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmManualReset.Designer.vb">
+      <DependentUpon>frmManualReset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmManualReset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOverrideCredits.Designer.vb">
+      <DependentUpon>frmOverrideCredits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOverrideCredits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrinterSetup.Designer.vb">
+      <DependentUpon>frmPrinterSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPrinterSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReportManager.Designer.vb">
+      <DependentUpon>frmReportManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReportManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmResetCalendar.Designer.vb">
+      <DependentUpon>frmResetCalendar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmResetCalendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSuperLogin.designer.vb">
+      <DependentUpon>frmSuperLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSuperLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBalanceInqKiosk.Designer.vb">
+      <DependentUpon>frmBalanceInqKiosk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBalanceInqKiosk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCardDeleteTool.Designer.vb">
+      <DependentUpon>frmCardDeleteTool.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCardDeleteTool.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDateRange.Designer.vb">
+      <DependentUpon>frmDateRange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDateRange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGroupManager.designer.vb">
+      <DependentUpon>frmGroupManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGroupManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImportData.Designer.vb">
+      <DependentUpon>frmImportData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImportData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInputBox.designer.vb">
+      <DependentUpon>frmInputBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInputBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMdiParent.designer.vb">
+      <DependentUpon>frmMdiParent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMdiParent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMemberManager.designer.vb">
+      <DependentUpon>frmMemberManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMemberManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLoadingScreen.designer.vb">
+      <DependentUpon>frmLoadingScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLoadingScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReaderSetup.Designer.vb">
+      <DependentUpon>frmReaderSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReaderSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReportViewer.Designer.vb">
+      <DependentUpon>frmReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmService.Designer.vb">
+      <DependentUpon>frmService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTerminalConfig.Designer.vb">
+      <DependentUpon>frmTerminalConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTerminalConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUserAccounts.designer.vb">
+      <DependentUpon>frmUserAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUserAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUserManager.designer.vb">
+      <DependentUpon>frmUserManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUserManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVoidCardTrans.Designer.vb">
+      <DependentUpon>frmVoidCardTrans.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVoidCardTrans.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVoidCorrection.Designer.vb">
+      <DependentUpon>frmVoidCorrection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVoidCorrection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVoidedTransViewer.Designer.vb">
+      <DependentUpon>frmVoidedTransViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVoidedTransViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Program.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\ActiveMembers.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ActiveMembers.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\ConsolidatedReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ConsolidatedReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\CreditAdjustments.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CreditAdjustments.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\MemberCardHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MemberCardHistory.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\EmployeeMasterFile.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeMasterFile.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\InactiveMembers.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InactiveMembers.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\ManuallyAddedMVR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ManuallyAddedMVR.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\OutstandingSD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OutstandingSD.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\ReissuedCards.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReissuedCards.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\rptLoyaltyRewardsV2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoyaltyRewardsV2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\rptMVRCreditsTransLog.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMVRCreditsTransLog.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\rptConcessionaires1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConcessionaires1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\rptConcessionaires.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConcessionaires.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\rptLoyaltyRewards.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoyaltyRewards.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\rptLoyaltyTransLog.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLoyaltyTransLog.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\SalaryDeductionPayments.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalaryDeductionPayments.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\TerminalEOD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TerminalEOD.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\IndividualTransactionLogs.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IndividualTransactionLogs.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\x86\Debug\Reports\UploadedMVR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UploadedMVR.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfirmTrans.resx">
+      <DependentUpon>frmConfirmTrans.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmManualReset.resx">
+      <DependentUpon>frmManualReset.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOverrideCredits.resx">
+      <DependentUpon>frmOverrideCredits.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrinterSetup.resx">
+      <DependentUpon>frmPrinterSetup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReportManager.resx">
+      <DependentUpon>frmReportManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmResetCalendar.resx">
+      <DependentUpon>frmResetCalendar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSuperLogin.resx">
+      <DependentUpon>frmSuperLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBalanceInqKiosk.resx">
+      <DependentUpon>frmBalanceInqKiosk.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCardDeleteTool.resx">
+      <DependentUpon>frmCardDeleteTool.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDateRange.resx">
+      <DependentUpon>frmDateRange.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGroupManager.resx">
+      <DependentUpon>frmGroupManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImportData.resx">
+      <DependentUpon>frmImportData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInputBox.resx">
+      <DependentUpon>frmInputBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMdiParent.resx">
+      <DependentUpon>frmMdiParent.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMemberManager.resx">
+      <DependentUpon>frmMemberManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLoadingScreen.resx">
+      <DependentUpon>frmLoadingScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReaderSetup.resx">
+      <DependentUpon>frmReaderSetup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmService.resx">
+      <DependentUpon>frmService.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTerminalConfig.resx">
+      <DependentUpon>frmTerminalConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUserAccounts.resx">
+      <DependentUpon>frmUserAccounts.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUserManager.resx">
+      <DependentUpon>frmUserManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVoidCardTrans.resx">
+      <DependentUpon>frmVoidCardTrans.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVoidCorrection.resx">
+      <DependentUpon>frmVoidCorrection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVoidedTransViewer.resx">
+      <DependentUpon>frmVoidedTransViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\x86\Debug\Scripts\DBScript - Copy.sql" />
+    <Content Include="DLL\ACR1222L_Lib.dll" />
+    <Content Include="DLL\DBSetup.dll" />
+    <Content Include="DLL\DevComponents.DotNetBar2.dll" />
+    <Content Include="DLL\Interop.SQLDMO.dll" />
+    <Content Include="DLL\Jacksonsoft.CustomTabControl.dll" />
+    <Content Include="DLL\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="DLL\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="loyalty-program-icon.ico" />
+    <None Include="bin\x86\Debug\Scripts\DBScript.sql" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Resources\PCR310U.png" />
+    <None Include="Resources\coins-icon.png" />
+    <None Include="Resources\Member-icon.png" />
+    <None Include="Resources\collect.png" />
+    <None Include="Resources\redeem.png" />
+    <None Include="Resources\import.png" />
+    <None Include="Resources\configure48.png" />
+    <None Include="Resources\transactions.png" />
+    <None Include="Resources\20130711115345acr1283_1500.png" />
+    <None Include="Resources\ACS-image1.jpg" />
+    <None Include="Resources\configuration.png" />
+    <None Include="Resources\void.png" />
+    <None Include="Resources\IconSourceFunding.png" />
+    <None Include="Resources\custom_reports.png" />
+    <Content Include="Notes.txt" />
+    <None Include="Resources\XPAY.png" />
+    <None Include="Resources\XPAY1.png" />
+    <None Include="Resources\MVR.png" />
+    <None Include="Resources\SD.png" />
+    <None Include="Resources\Charge.png" />
+    <None Include="Resources\touch-screen-kiosk-icon.png" />
+    <None Include="Resources\preferences.png" />
+    <None Include="Resources\override.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\TAPCARD SYSTEM 800 X 600.png" />
+    <None Include="Resources\LOGIN 330X170PX.png" />
+    <None Include="Resources\btnWhiteBG.png" />
+    <None Include="Resources\TAPCARD SYSTEM 800 X 6001.png" />
+    <None Include="Resources\LOGIN 330X170PX1.png" />
+    <None Include="Resources\CARD READER SETUP 420X200.png" />
+    <None Include="Resources\TERMINAL CONFIGURATION 360X160PX.png" />
+    <None Include="Resources\BACKGROUND DESIGN.png" />
+    <None Include="Resources\LOGIN 330X170PX - BG PATTERN WITH LOGO.png" />
+    <None Include="Resources\TAPCARD SYSTEM 800 X 6002.png" />
+    <None Include="Resources\e-PAS-SYSTEM-800-X-600.png" />
+    <None Include="Resources\e-PAS 800 X 600.jpg" />
+    <Content Include="Rewards.ico" />
+    <Content Include="SCT LOGO.bmp" />
+    <Content Include="TODO.txt" />
+    <Content Include="VersionHistory.txt" />
+    <None Include="Resources\devices.png" />
+    <None Include="Resources\iProx.png" />
+    <None Include="Resources\ACR38U.png" />
+    <None Include="Resources\ACR122U.png" />
+    <None Include="Resources\vivo.png" />
+    <None Include="Resources\loyalty-program-icon.png" />
+    <None Include="Resources\Excel-icon.png" />
+    <None Include="Resources\Text-icon.png" />
+    <None Include="Resources\exp.png" />
+    <None Include="Resources\reports.png" />
+    <None Include="Resources\process.png" />
+    <None Include="Resources\get card.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\logout48.png" />
+    <None Include="Resources\clients.gif" />
+    <None Include="Resources\Security.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\groups.png" />
+    <None Include="Resources\change pass.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Login.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="app.config" />
+    <None Include="Resources\loading%28final%29.gif" />
+    <None Include="Resources\Abstract_blue011.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\x86\Debug\Updates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ACR1222L_Lib\ACR1222L_Lib\ACR1222L_Lib.vbproj">
+      <Project>{22c1d115-6049-4d54-9feb-0d9193764351}</Project>
+      <Name>ACR1222L_Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DBSetupDLL_Dev_v2.0.0.2\DBSetup\DBSetup.vbproj">
+      <Project>{4c80a25a-be88-4559-ab96-5fa64cd01102}</Project>
+      <Name>DBSetup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LicenseLib\LicenseLib\LicenseLib.vbproj">
+      <Project>{0ad86943-4e5d-42b5-9613-fd6be28b4b73}</Project>
+      <Name>LicenseLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

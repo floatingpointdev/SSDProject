@@ -1,0 +1,3 @@
+v1.6
+	- 01.21.2021
+	  Removed max date on all date range controls (DPD) 
